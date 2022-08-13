@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue的双向数据绑定</title>
+<!--    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>-->
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div>Vue的双向数据绑定-实现</div>
+    <div id="app">
+        <span>最喜欢的歌手：{{ name }}</span>
+        <input type="text" v-model="name" />
+        <span>它的专辑：{{ album.val }}</span>
+        <input type="text" v-model="album.val" />
+    </div>
+    <script>
+        const vm = new Vue({
+              el: '#app',
+              data: {
+                name: 'dzq',
+                album:{
+                    val: '《摩天大楼》'
+                }
+              }
+        })
+        console.log(vm,'vue')
+    </script>
+</body>
+</html>
