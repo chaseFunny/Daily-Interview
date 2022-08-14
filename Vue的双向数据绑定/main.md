@@ -1,5 +1,5 @@
 ### Vue.js 数据双向绑定的原理及实现
-
+![pic](../image/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png)
 #### 先引入Vue源码实现
 1. 创建HTML，创建两个span，使用插值表达式来引入Vue中的数据，同时input标签也使用v-model绑定数据
 2. 接下来script标签中，创建Vue实例vm，并且把数据挂载到div标签上，并在控制台打印实例
