@@ -51,3 +51,6 @@
 在监听函数Observer的setter函数中调用自身，来实现对输入的val进行Observer()
 2. 如果给$data 添加新的属性并且赋值新的对象，这个时候也会监听不到怎么办？ 
 3. 创建一个Observer函数，用来监听$data中的每一个属性
+
+#### 本内容参考视频
+技术蛋老师：https://www.bilibili.com/video/BV1934y1a7MN?spm_id_from=333.999.0.0&vd_source=ce628a5bd43df277d141676215ef5ff3
