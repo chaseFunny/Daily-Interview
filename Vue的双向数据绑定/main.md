@@ -7,7 +7,6 @@
 4. 接下来就是我们自己来实现这个引入的vue.js文件，来实现数据的双向绑定
 #### 自己手动实现
 1. 用class创建一个Vue实例，在constructor接受实例传来的值，并存到this.$data
-<<<<<<< HEAD
 2. 创建一个Observer函数，用来监听$data中的每一个属性，使用Object.defineProperties()实现
 3. 为每个属性设置getter 和 setter属性，我们在刚开始定义属性时候并没有设置它 
 4. 这里set函数不需要返回，只需要把最新的值赋值给values即可，修改values后，getter触发也会访问最新的values
