@@ -1,0 +1,28 @@
+<mxfile host="65bd71144e">
+    <diagram id="ub6ItkpkkNMDZI3O2abD" name="第 1 页">
+        <mxGraphModel dx="856" dy="597" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;font style=&quot;font-size: 20px&quot;&gt;vue双向数据绑定&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="20" width="170" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="80" width="420" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;font style=&quot;font-size: 18px&quot;&gt;class vue&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="65" y="55" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;font style=&quot;font-size: 16px&quot;&gt;接受参数：{&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;el:实例挂在元素，&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;data：数据，}&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="100" width="220" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="constructor:&lt;br&gt;1. 把接受数据绑定到this上，&lt;br&gt;2. 监听data，实现数据的双向绑定&lt;br&gt;3. dom解析器，用于把data渲染到页面上" style="whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="180" width="270" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="dom解析：&lt;br&gt;1. 先获取实例挂在元素上所有的childNode&lt;br&gt;2. 对每一个节点进行解析&lt;br&gt;3. 使用正则得到自己想要的节点（文本节点，并且有插值表达式）&lt;br&gt;4. 替换节点中对应的文本属性" style="whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="84" y="340" width="330" height="140" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
