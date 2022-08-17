@@ -20,7 +20,8 @@ Function.prototype.newCall = function (obj) {
   delete  obj.aa;
   return res
 }
-console.log(friend.newCall(obj, 'a', 'b', 'c', 'd'))
+// friend.bind()
+// console.log(friend.newCall(obj, 'a', 'b', 'c', 'd'))
 // call的使用
 // let a ={
 //   name : "Cherry",
@@ -34,3 +35,21 @@ console.log(friend.newCall(obj, 'a', 'b', 'c', 'd'))
 
 // apply
 // apply 和 call 非常相似， apply 只是把后面的参数作为一个数组，放在第二个参数了
+
+// call
+Function.prototype.newBind = function (obj) {
+  console.log(arguments, 'wai') // 外层
+  let that = this;
+  let arr = Array.prototype.slice.call(arguments, 1)
+  return function (){
+    console.log(arguments, 'nei') // 内层
+    let arr2 = Array.prototype.slice.call( arguments )
+    let arrSum = Array.prototype.concat(arr, arr2)
+    that.apply(obj, arrSum);
+  }
+}
+friend.bind(obj, 'zhang', 'hao')('is a cool boy', '!!!!')
+
+// bind 的new操作
+const cc = friend.bind( obj, 'zhang', 'hao' )
+const dd = new cc('new Function')
