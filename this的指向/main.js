@@ -2,6 +2,8 @@ var aa = 'bb';
 function fn (){
   var aa = 'vv';
 };
+const obj ={}
+obj.prototype.assign()
 fn()
 console.log(aa)
 
