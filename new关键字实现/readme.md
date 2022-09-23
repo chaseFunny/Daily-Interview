@@ -28,3 +28,8 @@ class 的写法其实只是让对象原型的写法更加清晰、更像面向�
 注意：
 1. 改变一个对象的 [[Prototype]] 属性, 这种行为在每一个JavaScript引擎和浏览器中都是一个非常慢且影响性能的操作，所以更优解就是解决这个问题的；
 2. 有一个我当时看了很久的地方，就是第三步，我们第三步做到事情，其实调用一个传入的 class 类（构造函数），并且将其赋值给我们的ret，这样我们的ret就是 class的返回值
+
+### 参考文档：
+1. https://juejin.cn/post/6844904112857825293
+2. https://github.com/sisterAn/JavaScript-Algorithms/issues/71
+3. https://github.com/mqyqingfeng/Blog/issues/13
