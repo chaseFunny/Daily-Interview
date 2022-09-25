@@ -42,3 +42,4 @@
 #### 深入文档
 1. [浏览器与Node的事件循环(Event Loop)有何区别?](https://juejin.cn/post/6844903761949753352#heading-12)
 2. [一文带你了解 requestAnimationFrame](https://juejin.cn/post/7082366494348148744)
+3. MDN解释：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop
