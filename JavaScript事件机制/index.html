@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript事件机制</title>
+    <style>
+        .box{
+            background: pink;
+        }
+        .minibox{
+            width: 100px;
+            height: 100px;
+            background: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="minibox"></div>
+        <ul id="ul">
+            <li id="li">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script>
+        const box =document.querySelector('#box')
+        const minibox =document.querySelector('.minibox')
+        const li = document.querySelector('#li')
+        // 冒泡阶段
+        box.addEventListener('click', ()=>{
+          console.log(1)
+        }, false)
+        // 捕获阶段
+        box.addEventListener('click', ()=>{
+          console.log(2)
+        }, true)
+
+        minibox.addEventListener('click', ()=>{
+          console.log('miniBox CLICKED')
+        })
+        li.addEventListener('click',()=>{
+          console.log('冒泡阶段 li',li)
+        }, false)
+        li.addEventListener('click',()=>{
+          console.log('捕获阶段 li')
+        }, true)
+    </script>
+</body>
+</html>
