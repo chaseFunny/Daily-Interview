@@ -62,9 +62,10 @@ toString() 是 Object 的原型方法，调用该方法，默认返回当前对�
 - 可以看见`typeof` 无法判断变量是数组还是对象
 - 我通常会使用`typeof`来判断未知类型变量是否为`object`，如果为`object`，我再使用`instanceof`判断变量是否为数组，这样就能准确知道变量类型
 - 还可以通过`Object.prototype.toString.call()`
-
+- 其中如何判断变量为数组，可阅读第三篇参考链接
 参考链接：
 - https://juejin.cn/post/6844904197498880014
 - https://juejin.cn/post/7000300249235357709
+- https://segmentfault.com/a/1190000004479306
 
 
