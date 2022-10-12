@@ -36,25 +36,25 @@ typeof是一个操作符而不是函数，其右侧跟一个一元表达式，�
 - bigInt
 
 typeof原理是不同的对象在底层都表示为二进制，在Javascript中二进制前（低）三位存储其类型信息。
-000: 对象
-010: 浮点数
-100：字符串
-110：布尔
-1：整数
+- 000: 对象
+- 010: 浮点数
+- 100：字符串
+- 110：布尔
+- 1：整数
 
-2. `instanceof`
+##### 2. `instanceof`
 `instanceof` 是用来判断 A 是否为 B 的实例，表达式为：`A instanceof B`，如果 A 是 B 的实例，则返回 true,否则返回 false。 
 在这里需要特别注意的是：`instanceof` 检测的是原型
 通俗一些讲，`instanceof` 用来比较一个对象是否为某一个构造函数的实例。注意，`instanceof`可以准确的判断复杂数据类型，但是不能正确判断基本数据类型
 
-3. `Object.prototype.toString.call()`
+##### 3. `Object.prototype.toString.call()`
 toString() 是 Object 的原型方法，调用该方法，默认返回当前对象的 `[[Class]]` 。这是一个内部属性，其格式为` [object Xxx]` ，其中 Xxx 就是对象的类型。
 对于 Object 对象，直接调用 toString() 就能返回 [object Object] 。而对于其他对象，则需要通过 call / apply 来调用才能返回正确的类型信息。
 
-4. `constructor`
+##### 4. `constructor`
 `constructor`属性，可以得知某个实例对象，到底是哪一个构造函数产生的。
 `constructor`属性表示原型对象与构造函数之间的关联关系，如果修改了原型对象，一般会同时修改`constructor`属性，防止引用的时候出错。所以，修改原型对象时，一般要同时修改`constructor`属性的指向。
-注意：
+###### 注意：
 1. `null` 和 `undefined` 是无效的对象，因此是不会有 `constructor` 存在的，这两种类型的数据需要通过其他方式来判断。
 2. 函数的 `constructor` 是不稳定的，这个主要体现在自定义对象上，当开发者重写 `prototype` 后，原有的 `constructor` 引用会丢失，`constructor` 会默认为 `Object`
 
