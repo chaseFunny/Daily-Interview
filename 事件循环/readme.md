@@ -1,6 +1,6 @@
 ## 事件循环
 
-我们都知道JavaScript是单线程的，也就是只有一个调用栈，调用栈是按照先入后出的顺序进行事件执行，
+我们都知道 JavaScript 是单线程的，也就是只有一个调用栈，调用栈是按照先入后出的顺序进行事件执行，
 
 调用栈先执行同步任务，再执行异步任务，调用栈在发现异步任务时候，先把异步任务放到队列中，这里异步任务，又分为 **宏任务队列** 和 **微任务队列** ，队列都是按照先入先出规则，宏任务是耗时更久的，微任务是相对耗时短一点的
 
@@ -8,9 +8,9 @@
 
 1. 新程序或者子程序被直接执行，例如：`<script>`元素里面运行的代码，是程序被执行
 2. 事件的回调函数，例如：鼠标点击事件；
-3. setTimeout()和setInterval()
+3. setTimeout() 和 setInterval()
 4. ajax
-5. 还有 I/0操作，setImmediate，UI rendering等等
+5. 还有 I/0 操作，setImmediate，UI rendering 等等
 
 **微任务：**
 
@@ -25,8 +25,6 @@
 2. 将微任务队列清空后，才会去执行宏任务
 3. 在进行下一步宏任务之前，游览器可能会发生渲染，在渲染以后再去执行宏任务
 
-
-
 #### 注意：
 
 1. 在执行任何宏任务之前，都会先查看微任务队列是否清空（是否有任务需要执行），也就是必须保证微任务队列为空，如果不是空，那么久优先执行微任务队列中的任务
@@ -37,9 +35,10 @@
 
 ### 参考资料
 
-1. [JavaScript 宏任务与微任务 - Web前端工程师面试题讲解_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1eQ4y1d7mE/?spm_id_from=333.337.search-card.all.click&vd_source=ce628a5bd43df277d141676215ef5ff3)
+1. [JavaScript 宏任务与微任务 - Web 前端工程师面试题讲解\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1eQ4y1d7mE/?spm_id_from=333.337.search-card.all.click&vd_source=ce628a5bd43df277d141676215ef5ff3)
 
 #### 深入文档
-1. [浏览器与Node的事件循环(Event Loop)有何区别?](https://juejin.cn/post/6844903761949753352#heading-12)
+
+1. [浏览器与 Node 的事件循环 (Event Loop) 有何区别？](https://juejin.cn/post/6844903761949753352#heading-12)
 2. [一文带你了解 requestAnimationFrame](https://juejin.cn/post/7082366494348148744)
-3. MDN解释：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop
+3. MDN 解释：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop
