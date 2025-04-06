@@ -43,6 +43,42 @@ class PubSub {
     });
     return true;
   }
+  /**
+   * 取消订阅
+   * @param {string} token 订阅令牌
+   * @param {string} [topic] 可选的主题参数，如果提供则只在该主题中查找令牌
+   * @returns {boolean} 是否成功取消订阅
+   */
+  unsubscribe(token, topic) {
+    // 如果提供了主题参数，只在该主题中查找
+    if (topic) {
+      if (!this.topics.has(topic)) {
+        return false;
+      }
+
+      const subscribers = this.topics.get(topic);
+      const index = subscribers.findIndex((subscriber) => subscriber.token === token);
+
+      if (index !== -1) {
+        subscribers.splice(index, 1);
+        return true;
+      }
+
+      return false;
+    }
+
+    // 如果没有提供主题，在所有主题中查找
+    for (const [topicName, subscribers] of this.topics.entries()) {
+      const index = subscribers.findIndex((subscriber) => subscriber.token === token);
+
+      if (index !== -1) {
+        subscribers.splice(index, 1);
+        return true;
+      }
+    }
+
+    return false;
+  }
 }
 
 // 使用示例
