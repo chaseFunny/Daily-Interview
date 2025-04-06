@@ -10,9 +10,10 @@ class PubSub {
    * 订阅者
    * @param {*} topic 订阅主题
    * @param {*} callback 执行响应
+   * @param {*} option
    * @returns 订阅 token，用于取消订阅
    */
-  subscribe(topic, callback) {
+  subscribe(topic, callback, option = {}) {
     // 如果还没有该主题
     if (!this.topics.has(topic)) {
       this.topics.set(topic, []);
@@ -23,6 +24,7 @@ class PubSub {
     this.topics.get(topic).push({
       token,
       callback,
+      once: !!option.once,
     });
     return token;
   }
