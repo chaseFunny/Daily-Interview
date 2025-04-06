@@ -26,6 +26,23 @@ class PubSub {
     });
     return token;
   }
+  /**
+   * 发布者
+   * @param {*} topic 主题
+   * @param {*} data 数据
+   * @returns 是否成功发布
+   */
+  publish(topic, data) {
+    // 如果主题不存在，什么都不做
+    if (!this.topics.has(topic)) {
+      return false;
+    }
+    const subscribes = this.topics.get(topic);
+    subscribes.forEach((subscriber) => {
+      subscriber.callback(data, topic);
+    });
+    return true;
+  }
 }
 
 // 使用示例
