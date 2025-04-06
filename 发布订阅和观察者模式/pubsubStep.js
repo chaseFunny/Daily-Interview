@@ -10,7 +10,7 @@ class PubSub {
    * 订阅者
    * @param {*} topic 订阅主题
    * @param {*} callback 执行响应
-   * @param {*} option
+   * @param {*} option 可选参数，once：boolean 是否仅订阅一次
    * @returns 订阅 token，用于取消订阅
    */
   subscribe(topic, callback, option = {}) {
@@ -42,6 +42,9 @@ class PubSub {
     const subscribes = this.topics.get(topic);
     subscribes.forEach((subscriber) => {
       subscriber.callback(data, topic);
+      if (subscriber.once) {
+        this.unsubscribe(subscriber.token, topic);
+      }
     });
     return true;
   }
@@ -80,6 +83,15 @@ class PubSub {
     }
 
     return false;
+  }
+  /**
+   * 订阅一次
+   * @param {*} topic 主题
+   * @param {*} callback 执行响应
+   * @returns 订阅 token，用于取消订阅
+   */
+  subscribeOnce(topic, callback) {
+    return this.subscribe(topic, callback, { once: true });
   }
 }
 
